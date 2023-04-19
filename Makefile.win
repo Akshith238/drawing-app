@@ -1,0 +1,52 @@
+# Project: Project2
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = Delete_Square.o Horizontal_Line.o main.o Rectangle.o Scene.o Shape.o Square.o Triangle.o Vertical_Line.o
+LINKOBJ  = Delete_Square.o Horizontal_Line.o main.o Rectangle.o Scene.o Shape.o Square.o Triangle.o Vertical_Line.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = da.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Delete_Square.o: Delete_Square.cpp
+	$(CPP) -c Delete_Square.cpp -o Delete_Square.o $(CXXFLAGS)
+
+Horizontal_Line.o: Horizontal_Line.cpp
+	$(CPP) -c Horizontal_Line.cpp -o Horizontal_Line.o $(CXXFLAGS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Rectangle.o: Rectangle.cpp
+	$(CPP) -c Rectangle.cpp -o Rectangle.o $(CXXFLAGS)
+
+Scene.o: Scene.cpp
+	$(CPP) -c Scene.cpp -o Scene.o $(CXXFLAGS)
+
+Shape.o: Shape.cpp
+	$(CPP) -c Shape.cpp -o Shape.o $(CXXFLAGS)
+
+Square.o: Square.cpp
+	$(CPP) -c Square.cpp -o Square.o $(CXXFLAGS)
+
+Triangle.o: Triangle.cpp
+	$(CPP) -c Triangle.cpp -o Triangle.o $(CXXFLAGS)
+
+Vertical_Line.o: Vertical_Line.cpp
+	$(CPP) -c Vertical_Line.cpp -o Vertical_Line.o $(CXXFLAGS)
